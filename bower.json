@@ -1,0 +1,38 @@
+{
+	"name": "sf-collection",
+	"version": "0.1.4",
+	"homepage": "https://github.com/giosh94mhz/sf-collection",
+	"authors": [
+		"Giorgio Premi <giosh94mhz@gmail.com>"
+	],
+	"description": "jQuery plugin to handle symfony2 collection in a proper way",
+	"main": "src/jquery.sf-collection.js",
+	"ignore": [
+		".editorconfig",
+		".git",
+		".gitignore",
+		".npmignore",
+		".travis.yml",
+		".yo-rc.json",
+		"Gruntfile.js",
+		"README.md",
+		"bower.json",
+		"demo",
+		"package.json",
+		"src"
+	],
+	"keywords": [
+		"jquery",
+		"jquery-plugin",
+		"symfony",
+		"collection"
+	],
+	"dependencies": {
+		"jquery": ">=1.11.0"
+	},
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/giosh94mhz/sf-collection.git"
+	}
+}
