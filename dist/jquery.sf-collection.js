@@ -73,8 +73,8 @@
             if (options.allowAdd) {
                 var $add = options.initAddButton(this.element);
                 if ($add !== false) {
-                    if (typeof $add !== "object") {
-                        console.error("jquery.sf-collection.js: initAddButton must return a jQuery object");
+                    if (!isNonEmptyObject($add)) {
+                        console.error("jquery.sf-collection.js: initAddButton must return a non-empty jQuery object or false");
                         return false;
                     }
                     $add.addClass('sf-collection-action sf-collection-add');
@@ -85,8 +85,8 @@
             if (options.allowRemove) {
                 var $remove = options.initRemoveButton(this.element);
                 if (false !== $remove) {
-                    if (!$remove || typeof $remove !== "object") {
-                        console.error("jquery.sf-collection.js: initRemoveButton must return a jQuery object");
+                    if (!isNonEmptyObject($remove)) {
+                        console.error("jquery.sf-collection.js: initRemoveButton must return a non-empty jQuery object or false");
                         return false;
                     }
                     $remove.addClass('sf-collection-action sf-collection-remove');
@@ -115,8 +115,8 @@
             if (options.allowAdd) {
                 var $add = options.initAddButton(this.element, entry);
                 if (false !== $add) {
-                    if (!$add || typeof $add !== "object") {
-                        console.error("jquery.sf-collection.js: initAddButton must return a jQuery object");
+                    if (!isNonEmptyObject($remove)) {
+                        console.error("jquery.sf-collection.js: initAddButton must return a non-empty jQuery object or false");
                         return false;
                     }
                     $add.addClass('sf-collection-action sf-collection-add');
@@ -126,8 +126,8 @@
             if (options.allowRemove) {
                 var $remove = options.initRemoveButton(this.element, entry);
                 if (false !== $remove) {
-                    if (!$remove || typeof $remove !== "object") {
-                        console.error("jquery.sf-collection.js: initRemoveButton must return a jQuery object");
+                    if (!isNonEmptyObject($remove)) {
+                        console.error("jquery.sf-collection.js: initRemoveButton must return a non-empty jQuery object or false");
                         return false;
                     }
                     $remove.addClass('sf-collection-action sf-collection-remove');
@@ -272,6 +272,10 @@
      */
     function escapeRegExp(string) {
         return string.replace(/([.*+?^${}()|\[\]\/\\])/g, "\\$1");
+    }
+    
+    function isNonEmptyObject($object) {
+        return typeof $object === "object" && null !== $object && $object.length > 0;
     }
 
     function findEntryName(entry, collectionName) {
