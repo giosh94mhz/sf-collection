@@ -106,7 +106,7 @@
             if (options.allowAdd) {
                 var $add = options.initAddButton(this.element, entry);
                 if (false !== $add) {
-                    if (!isNonEmptyObject($remove)) {
+                    if (!isNonEmptyObject($add)) {
                         console.error("jquery.sf-collection.js: initAddButton must return a non-empty jQuery object or false");
                         return false;
                     }
@@ -284,6 +284,10 @@
     }
 
     function defaultInitRemoveButton(collection, entry) {
+        if (!entry) {
+            return false;
+        }
+
         var prototype = collection.data('prototype-remove') || '<a href="#remove">[-]</a>';
         var $remove = $($.trim(prototype));
         if ($remove.length > 1) {
