@@ -1,5 +1,5 @@
 /*
- * sf-collection - v0.1.5
+ * sf-collection - v0.1.6
  * jQuery plugin to handle symfony2 collection in a proper way
  * 
  *

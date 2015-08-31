@@ -1,6 +1,6 @@
 {
   "name": "sf-collection",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "jQuery plugin to handle symfony2 collection in a proper way",
   "keywords": [
     "jquery",
